@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   loginRememberChanged() {
-
+    console.log('this.loginPresenter.isValidForm: ', this.loginPresenter.isValidForm);
   }
 
   otherEvent() {
