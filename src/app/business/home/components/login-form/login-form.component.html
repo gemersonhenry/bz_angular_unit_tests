@@ -1,0 +1,41 @@
+<form #loginForm="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email"
+      class="form-control"
+      placeholder="Enter email"
+      name="loginEmail"
+      [(ngModel)]="loginEmail"
+      (ngModelChange)="loginPresenter.changeLoginEmail(loginEmail); otherEvent()"
+      (blur)="loginPresenter.touchLoginEmail()">
+    <small id="emailHelp"
+      class="form-text text-muted">
+      We'll never share your email with anyone else.
+    </small>
+    <div>
+      {{ loginPresenter.emailControl.errorMessage }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password"
+      class="form-control" 
+      placeholder="Password"
+      name="loginPassword"
+      [(ngModel)]="loginPassword"
+      (ngModelChange)="loginPresenter.changeLoginPassword(loginPassword)"
+      (blur)="loginPresenter.touchLoginPassword()">
+    <div>
+      {{ loginPresenter.passwordControl.errorMessage }}
+    </div>
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" 
+      class="form-check-input"
+      name="loginRemember"
+      [(ngModel)]="loginRemember"
+      (ngModelChange)="loginRememberChanged()">
+    <label class="form-check-label">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
