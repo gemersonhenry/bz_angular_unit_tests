@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginFormComponent } from './login-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginPresenter } from '../../presenters/login-presenter/login-presenter';
+import { PresentersModule } from '../../presenters/presenters.module';
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -14,10 +14,8 @@ describe('LoginFormComponent', () => {
       imports: [
         FormsModule,
         ReactiveFormsModule,
+        PresentersModule,
       ],
-      providers: [
-        LoginPresenter,
-      ]
     })
     .compileComponents();
   }));

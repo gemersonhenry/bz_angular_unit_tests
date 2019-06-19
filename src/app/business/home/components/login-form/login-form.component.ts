@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { LoginPresenter } from '../../presenters/login-presenter/login-presenter';
+import { LoginPresenterService } from '../../presenters/login-presenter/login-presenter.service';
 
 @Component({
   selector: 'bz-login-form',
@@ -14,16 +13,14 @@ export class LoginFormComponent implements OnInit {
   public loginRemember = false;
 
   constructor(
-    private loginPresenter: LoginPresenter,
+    private loginPresenter: LoginPresenterService,
   ) { }
 
   ngOnInit() {
-    this.loginPresenter.emailControl.setValue(this.loginEmail);
-    this.loginPresenter.passwordControl.setValue(this.loginPassword);
   }
 
   loginRememberChanged() {
-    console.log('this.loginPresenter.isValidForm: ', this.loginPresenter.isValidForm);
+    console.log('loginRememberChanged');
   }
 
   otherEvent() {

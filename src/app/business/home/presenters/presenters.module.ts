@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginPresenter } from './login-presenter/login-presenter';
+import { LoginPresenterService } from './login-presenter/login-presenter.service';
 
 @NgModule({
   declarations: [],
@@ -8,7 +8,7 @@ import { LoginPresenter } from './login-presenter/login-presenter';
     CommonModule
   ],
   providers: [
-    LoginPresenter,
+    LoginPresenterService
   ],
 })
 export class PresentersModule { }

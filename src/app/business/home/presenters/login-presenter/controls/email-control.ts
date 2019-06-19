@@ -1,5 +1,5 @@
 import { FormControl, Validators, ValidationErrors } from '@angular/forms';
-import { EMAIL_ERROR_MESSAGES } from '../login-error-messages';
+import { EMAIL_ERROR_MESSAGES } from './login-error-messages';
 
 export class EmailControl extends FormControl {
 

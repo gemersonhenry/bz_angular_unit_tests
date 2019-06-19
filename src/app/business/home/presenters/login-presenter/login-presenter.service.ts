@@ -1,28 +1,27 @@
+import { FormGroup } from '@angular/forms';
 import { EmailControl } from './controls/email-control';
 import { PasswordControl } from './controls/password-control';
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
 
 @Injectable()
-export class LoginPresenter {
+export class LoginPresenterService {
 
   public loginForm = new FormGroup({
     emailControl: new EmailControl(),
     passwordControl: new PasswordControl(),
   });
 
-  constructor() {}
+  constructor() {
+    this.emailControl.setValue('');
+    this.passwordControl.setValue('');
+  }
 
   public get emailControl() {
-    return this.loginForm.get('emailControl');
+    return this.loginForm.get('emailControl') as EmailControl;
   }
 
   public get passwordControl() {
-    return this.loginForm.get('passwordControl');
-  }
-
-  public get isValidForm() {
-    return this.loginForm.valid;
+    return this.loginForm.get('passwordControl') as PasswordControl;
   }
 
   public changeLoginEmail(email: string) {
