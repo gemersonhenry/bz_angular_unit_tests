@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule',
-  }
+  },
+  {
+    path: 'login',
+    loadChildren: './login/login.module#LoginModule',
+  },
 ];
 
 @NgModule({

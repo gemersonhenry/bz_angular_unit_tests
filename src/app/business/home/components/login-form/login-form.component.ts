@@ -23,8 +23,9 @@ export class LoginFormComponent implements OnInit {
     console.log('loginRememberChanged');
   }
 
-  otherEvent() {
-    console.log('otherEvent');
+  submitForm($event) {
+    $event.preventDefault();
+    console.log('loginForm: ', this.loginPresenter.loginForm.valid);
   }
 
 }

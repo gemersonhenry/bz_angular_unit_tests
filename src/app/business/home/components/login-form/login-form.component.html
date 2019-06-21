@@ -1,4 +1,4 @@
-<form #loginForm="ngForm">
+<form #loginForm="ngForm" (submit)="submitForm($event)">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email"
@@ -6,7 +6,7 @@
       placeholder="Enter email"
       name="loginEmail"
       [(ngModel)]="loginEmail"
-      (ngModelChange)="loginPresenter.changeLoginEmail(loginEmail); otherEvent()"
+      (ngModelChange)="loginPresenter.changeLoginEmail(loginEmail)"
       (blur)="loginPresenter.touchLoginEmail()">
     <small id="emailHelp"
       class="form-text text-muted">
