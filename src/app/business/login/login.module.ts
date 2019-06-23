@@ -7,6 +7,7 @@ import { SingInComponent } from './views/sing-in/sing-in.component';
 import { RegisterComponent } from './views/register/register.component';
 import { RecoverPasswordComponent } from './views/recover-password/recover-password.component';
 import { WellcomeComponent } from './views/wellcome/wellcome.component';
+import { PresentersModule } from './presenters/presenters.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { WellcomeComponent } from './views/wellcome/wellcome.component';
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    PresentersModule,
   ]
 })
 export class LoginModule { }

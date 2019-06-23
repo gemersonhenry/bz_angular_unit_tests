@@ -1,5 +1,6 @@
 import { FormControl, Validators, ValidationErrors } from '@angular/forms';
 import { EMAIL_ERROR_MESSAGES } from './login-error-messages';
+import { emailValidator } from '../validators/email-validator';
 
 export class EmailControl extends FormControl {
 
@@ -10,13 +11,15 @@ export class EmailControl extends FormControl {
 
   private addValidations() {
     this.setValidators([
-      Validators.required
+      Validators.required,
+      emailValidator()
     ]);
   }
 
   public get errorMessage(): string {
     const errors = this.errors as ValidationErrors;
     if (errors) {
+      console.log('errors: ', errors);
       const keys = Object.keys(errors);
       const currentKey = keys[0];
       const { showErrorMessage } = this;
