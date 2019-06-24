@@ -1,7 +1,23 @@
 import { PasswordControl } from './password-control';
 
 describe('PasswordControl', () => {
-  it('should create an instance', () => {
-    expect(new PasswordControl()).toBeTruthy();
+
+  let passwordControl: PasswordControl;
+
+  beforeEach(() => {
+    passwordControl = new PasswordControl();
   });
+
+  it('requerido', () => {
+
+  });
+
+  it('minima cantidad de caracteres', () => {
+
+  });
+
+  it('expresion regular', () => {
+
+  });
+
 });

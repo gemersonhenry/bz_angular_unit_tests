@@ -1,7 +1,7 @@
 import { customEmailValidator } from './custom-email-validator';
 import { AbstractControl, FormControl } from '@angular/forms';
 
-describe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => {
+fdescribe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => {
 
   let control: FormControl;
   // emails to invalid Tests
@@ -13,6 +13,7 @@ describe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => 
   const invalidEmail06 = 'gemerson_.bendezu@gmail.com';
   // emails to valid tests
   const validEmail01 = 'gemerson_bendezu_2019.33@peru.com.pe';
+  const validEmail02 = 'gemersonbendezu@gmail.com';
 
   beforeEach(() => {
     control = new FormControl('', [
@@ -64,6 +65,11 @@ describe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => 
 
   it(`El correo "${validEmail01}" debe ser valido`, () => {
     control.setValue(validEmail01);
+    expect(control.valid).toBeTruthy();
+  });
+
+  it(`El correo "${validEmail02}" debe ser valido`, () => {
+    control.setValue(validEmail02);
     expect(control.valid).toBeTruthy();
   });
 });

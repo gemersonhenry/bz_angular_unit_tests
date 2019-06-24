@@ -1,16 +1,12 @@
 import { EmailControl } from './email-control';
 import { EMAIL_ERROR_MESSAGES } from '../error-messages/control-error-messages';
 
-fdescribe('EmailControl', () => {
+describe('EmailControl', () => {
 
   let emailControl: EmailControl;
 
   beforeEach(() => {
     emailControl = new EmailControl();
-  });
-
-  it('Debe crearse la instancia de EmailControl', () => {
-    expect(emailControl).toBeTruthy();
   });
 
   it(`El campo vacio debe mostrar el mensaje de error: "${EMAIL_ERROR_MESSAGES.required}"`, () => {
