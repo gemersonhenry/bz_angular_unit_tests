@@ -11,3 +11,7 @@ export const PASSWORD_ERROR_MESSAGES = {
   medium_security: 'El nivel de seguridad de la contraseña es media',
   high_security: 'El nivel de seguridad de la contraseña es alta',
 };
+
+export const PHONE_NUMBER_ERROR_MESSAGES = {
+
+};
