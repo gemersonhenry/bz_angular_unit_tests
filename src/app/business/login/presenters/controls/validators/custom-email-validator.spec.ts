@@ -1,7 +1,7 @@
 import { customEmailValidator } from './custom-email-validator';
 import { AbstractControl, FormControl } from '@angular/forms';
 
-fdescribe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => {
+describe('CUSTOM EMAIL VALIDATOR: validación de una expresión regular', () => {
 
   let control: FormControl;
   // emails to invalid Tests
