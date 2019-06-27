@@ -24,24 +24,21 @@ export function customHighPasswordValidation(): ValidatorFn {
   };
 }
 
-// EJEMPLO DE UNA IMPLEMENTACIÓN EN UN SOLO "VALIDATOR"
-// export function customPasswordValidator(): ValidatorFn {
-//   return (control: AbstractControl) => {
-//     if (!LOW_PASSWORD_REG_EXP.test(control.value)) {
-//       return {
-//         low_security: true,
-//       };
-//     }
-//     if (!MEDIUM_PASSWORD_REG_EXP.test(control.value)) {
-//       return {
-//         medium_security: true,
-//       };
-//     }
-//     if (!HIGH_PASSWORD_REG_EXP.test(control.value)) {
-//       return {
-//         high_security: true,
-//       };
-//     }
-//     return null;
-//   };
-// }
+export function customPasswordValidator(): ValidatorFn {
+  // const REG_EXP_1 = /[a-z]/g;
+  const ESTRICT_REG_EXP_1 = /^[a-z]$/g;
+  // const REG_EXP_2 = /[A-Z0-9]/g;
+  const ESTRICT_REG_EXP_2 = /^[A-Z]$/g;
+  // const REG_EXP_3 = /[@#$%&?¿!¡_.=*+/-]/g;
+  const ESTRICT_REG_EXP_3 = /^[@#$%&?¿!¡_.=*+/-]$/g;
+  return (control: AbstractControl) => {
+    const { value } = control;
+    // validando si solo cumplen con una expresión
+    if (ESTRICT_REG_EXP_1.test(value) || ESTRICT_REG_EXP_2.test(value) || ESTRICT_REG_EXP_3.test(value)) {
+      return {
+        basic_validation: true,
+      };
+    }
+    return null;
+  };
+}
